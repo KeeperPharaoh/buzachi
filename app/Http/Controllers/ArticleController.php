@@ -39,8 +39,8 @@ class ArticleController extends Controller
                     'id'         => $article->id,
                     'title'      => $article->getTranslatedAttribute('title', $this->getLocale()),
                     'text'       => $article->getTranslatedAttribute('text', $this->getLocale()),
-                    'image'      => asset('storage/' . $article->image),
-                    'video'      => asset('storage/' . json_decode($article->video)[0]->download_link),
+                    'image'      => $article->image ? asset('storage/' . $article->image) : null,
+                    'video'      => $article->video ? asset('storage/' . json_decode($article->video)[0]->download_link) : null,
                     'created_at' => $article->created_at,
                 ],
             ]

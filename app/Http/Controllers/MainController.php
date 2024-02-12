@@ -31,7 +31,7 @@ class MainController extends Controller
 
         return response()->json(
             [
-                'email'   => $contact->address,
+                'email'   => $contact->email,
                 'address' => $contact->getTranslatedAttribute('address', $this->getLocale()),
                 'phone'   => $contact->phone,
             ]
@@ -175,7 +175,7 @@ class MainController extends Controller
     {
         return [
             'name'  => 'BRENT',
-            'cost'  => round(77.23, 2),
+            'cost'  => round(80.55, 2),
             'is_up' => true,
         ];
     }
