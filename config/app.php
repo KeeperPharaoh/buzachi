@@ -189,6 +189,7 @@ return [
     */
 
     'aliases' => [
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
@@ -231,5 +232,4 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
 ];

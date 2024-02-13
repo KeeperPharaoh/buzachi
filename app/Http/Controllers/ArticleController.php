@@ -40,7 +40,7 @@ class ArticleController extends Controller
                     'title'      => $article->getTranslatedAttribute('title', $this->getLocale()),
                     'text'       => $article->getTranslatedAttribute('text', $this->getLocale()),
                     'image'      => $article->image ? asset('storage/' . $article->image) : null,
-                    'video'      => $article->video ? asset('storage/' . json_decode($article->video)[0]->download_link) : null,
+                    'video'      => ($article->video && !empty(json_decode($article->video)))? asset('storage/' . json_decode($article->video)[0]->download_link) : null,
                     'created_at' => $article->created_at,
                 ],
             ]
